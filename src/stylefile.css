@@ -66,6 +66,13 @@
     width: 100%;
     padding: 24px 0;
   }
+  .btnclass{
+
+  }
+  .btnclass :hover{
+    background-color: #603bbb;
+    color: black;
+  }
   
   .login .loginContainer .btnContainer p {
     margin: 14px 0 0 0;

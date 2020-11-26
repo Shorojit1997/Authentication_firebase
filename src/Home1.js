@@ -39,7 +39,6 @@ const Home1 = () => {
             )
     }
     const handleSignup = () => {
-        console.log('yes clicked')
         clearErrors();
         fire
             .auth()
@@ -103,9 +102,6 @@ const Home1 = () => {
             )
 
             }
-            
-           
-
         </div>
     );
 };
