@@ -14,6 +14,7 @@ const Uploadtext = () => {
             .then((item) => {
                 var items = [];
                 items = item.docs.map((doc) => doc.data());
+               // items.reverse();
                 setStudent(items);
                 console.log(students)
             })
@@ -27,10 +28,11 @@ const Uploadtext = () => {
         .then((err)=>{
             console.log(err);
             setStudentId('');
-            setName('');
+            setName('')
         })
 
     }
+
 
     useEffect(() => {
         getelements();

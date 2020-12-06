@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fire from './fire'
+import fire from '../fire'
 import Login from './Login';
 import Hero from './Hero'
 
@@ -100,7 +100,6 @@ const Home1 = () => {
                 passwordError={passwordError}
             />
             )
-
             }
         </div>
     );

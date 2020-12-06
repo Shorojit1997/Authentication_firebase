@@ -1,12 +1,15 @@
 import './App.css';
-import Uploadtext from './firestore/Uploadtext';
+import RoutingPage from './galarry/RoutingPage';
+
+
+
 
 
 function App() {
   return (
     <div className="App">
-      <Uploadtext/>
-    
+     <RoutingPage/>
+      
     </div>
   );
 }
