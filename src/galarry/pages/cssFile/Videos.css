@@ -1,0 +1,72 @@
+body{
+  background-color: black;
+}
+.card{
+  position: relative;
+  display: block;
+  margin:5px auto;
+  padding: 0;
+  width: 600px;
+  height: auto;
+  border-radius: 10px;
+  background-color: #eee;
+}
+.head{
+  position: relative;
+  margin:5px;
+  border-bottom: 1px solid #bbb;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+.head img{
+  width: 50px;
+  height:50px;
+  margin:10px;
+  background-color: white;
+  border:1px solid green;
+  border-radius: 40px;
+}
+.head div{
+  font-size: 20px;
+  font-weight: bold;
+}
+.body {
+  width: 590px;
+  margin:5px;
+  height: auto;
+}
+.footer {
+  position: relative;
+  display: block;
+}
+.counter{
+  display:flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  align-items: center;
+  border-bottom: 1px solid #bbb;
+
+}
+.counter img{
+  width: 20px;
+  height: 20px;
+}
+.counter p{
+  padding-left: 10px;
+}
+.opinion{
+  display:flex;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  align-items: center;
+}
+.opinion button{
+  width: 33%;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+
+
+

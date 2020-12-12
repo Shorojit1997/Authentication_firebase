@@ -1,45 +1,58 @@
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
-import { IconContext } from 'react-icons';
+
 
 function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
+  const [toggle,setToggle]=useState(false)
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const styles={
+    color:'#fff',
+       backgroundColor:' #333',
+       borderRadius:' 10px',
+  }
+  const tset=()=>{
+    setToggle(!toggle);
+  }
+
 
   return (
-    <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
-        </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
-              </Link>
-            </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
-    </>
+    <div>
+    <div  className="navbar">
+      <div className="navlogo">Gallary</div>
+      <div onClick={tset} className="navicon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+  
+      <div className="navlist">
+        <ul>
+          <li>< NavLink activeStyle={styles} exact to="/">Home</ NavLink></li>
+          <li>< NavLink activeStyle={styles} to="/image">Image</ NavLink></li>
+          <li>< NavLink activeStyle={styles} to="/video">Video</ NavLink></li>
+          <li>< NavLink activeStyle={styles} to="/profile">Profile</ NavLink></li>
+          <li>< NavLink activeStyle={styles}  to="/logout">Logout</ NavLink></li>
+        </ul>
+      </div>
+      
+    </div>
+    { toggle?
+     (<div className="tg">
+             <ul>
+          <li>< NavLink activeStyle={styles} exact to="/">Home</ NavLink></li>
+          <li>< NavLink activeStyle={styles} to="/image">Image</ NavLink></li>
+          <li>< NavLink activeStyle={styles} to="/video">Video</ NavLink></li>
+          <li>< NavLink activeStyle={styles} to="/profile">Profile</ NavLink></li>
+          <li>< NavLink  to="/logout">Logout</ NavLink></li>
+        </ul>
+      </div>)
+      :(
+        <p></p>
+      )
+}
+  
+    </div>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import fire from '../fire'
-import Login from '../Login';
+import './stylefile.css'
+
 import LoginPage from './LoginPage';
 
 

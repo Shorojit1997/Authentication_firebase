@@ -1,0 +1,10 @@
+.progressbar{
+    height: 10px;
+    width: 300px;
+    display: none;
+    justify-content: center;
+    vertical-align: auto;
+}
+.active{
+    display: block
+}

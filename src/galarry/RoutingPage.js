@@ -14,9 +14,7 @@ const RoutingPage = () => {
         <div className=''>
             <BrowserRouter> 
             <Navbar/>
-            
            
-
                <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route path='/image' component={Image}/>
