@@ -4,18 +4,21 @@ body{
 .card{
   position: relative;
   display: block;
-  margin:5px auto;
+  margin:0 auto;
   padding: 0;
-  width: 500px;
-  height: 600px;
+  max-width:600px;
+  min-height: 500px;
   border-radius: 10px;
   background-color: #eee;
+  align-items: center;
+  justify-content: center;
 }
 .head{
   position: relative;
   margin:5px;
   border-bottom: 1px solid #bbb;
   display: flex;
+  width: 100%;
   padding: 10px;
   align-items: center;
 }
@@ -31,10 +34,17 @@ body{
   font-size: 20px;
   font-weight: bold;
 }
+.body{
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  max-width: 590px;
+}
 .body img{
-  width: 490px;
-  margin:5px;
-  height: 400px;
+  overflow: hidden;
+  max-width: 590px;
+  margin: 0 auto;
+  height: auto;
 }
 .footer {
   position: relative;
@@ -45,6 +55,7 @@ body{
   flex-wrap: wrap;
   padding-left: 10px;
   align-items: center;
+  max-width: 600px;
   border-bottom: 1px solid #bbb;
 
 }
@@ -53,6 +64,7 @@ body{
   height: 20px;
 }
 .counter p{
+  margin-top: 10px;
   padding-left: 10px;
 }
 .opinion{
@@ -60,10 +72,14 @@ body{
   flex-wrap: wrap;
   padding-left: 10px;
   align-items: center;
+
+
 }
-.opinion button{
+.opinion>p{
   width: 33%;
   margin-top: 5px;
+  text-align: center;
+
   border-radius: 5px;
 }
 

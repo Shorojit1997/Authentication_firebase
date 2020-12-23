@@ -2,8 +2,7 @@
     height: 10px;
     width: 300px;
     display: none;
-    justify-content: center;
-    vertical-align: auto;
+    margin: 0 auto;
 }
 .active{
     display: block

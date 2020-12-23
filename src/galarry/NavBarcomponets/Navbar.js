@@ -17,7 +17,7 @@ function Navbar() {
 
 
   return (
-    <div>
+    <div className=''>
     <div  className="navbar">
       <div className="navlogo">Gallary</div>
       <div onClick={tset} className="navicon">
@@ -51,7 +51,6 @@ function Navbar() {
         <p></p>
       )
 }
-  
     </div>
   );
 }

@@ -4,7 +4,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
-			background-color: #666;
+			background-color: rgb(207, 198, 198);
 		}
 		.navlogo{
       font-size: 40px;
@@ -39,13 +39,13 @@
        .navicon{
        	margin:0;
        	padding: 0;
-       	border:2px solid #aaa;
+       	border:2px solid rgb(34, 14, 14);
        	display: none;
 
        }
        .navicon>div{
        	margin: 5px;
-       	border:1px solid white;
+       	border:2px solid rgb(41, 7, 7);
        	width: 30px;
        }
        .navicon:hover{

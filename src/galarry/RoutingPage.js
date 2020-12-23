@@ -14,15 +14,13 @@ const RoutingPage = () => {
         <div className=''>
             <BrowserRouter> 
             <Navbar/>
-           
-               <Switch>
+                <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route path='/image' component={Image}/>
                 <Route path='/video' component={Video}/>
                 <Route path='/profile' component={Profile}/>
                 <Route path='/logout' component={Logout}/>
                 </Switch>
-           
             </BrowserRouter>
             
         </div>

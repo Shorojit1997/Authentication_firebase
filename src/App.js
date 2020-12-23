@@ -1,5 +1,5 @@
 import './App.css';
-import RoutingPage from './galarry/RoutingPage';
+import Startingpage from './galarry/Startingpage';
 
 
 
@@ -8,8 +8,8 @@ import RoutingPage from './galarry/RoutingPage';
 
 function App() {
   return (
-    <div className="App">
-     <RoutingPage/>
+    <div >
+      <Startingpage/>
       
     </div>
   );

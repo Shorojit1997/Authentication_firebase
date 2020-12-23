@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player'
 import { storage, db, timestamp } from '../Config/fire'
 import './cssFile/Videos.css'
+import like from '../Imagefile/like.png'
+//icon
+import  {FaRegComment} from 'react-icons/fa';
+import  {AiFillLike,AiOutlineShareAlt} from 'react-icons/ai';
+import * as IoIcons from 'react-icons/io';
 
+import * as BsIcons from 'react-icons/bs';
 
 const Video = () => {
     const [videos, setvideos] = useState([])
@@ -28,19 +34,18 @@ const Video = () => {
                             <div>Profile name</div>
                         </div>
                         <div className='body'>
-                            <ReactPlayer width='590px' key={video.createdAt} controls url={video.url} />
+                            <ReactPlayer width='585px' key={video.createdAt} controls url={video.url} />
                         </div>
 
                         <div className="footer">
                             <div className="counter">
-                                <img src="" alt="" />
+                                <img src={like} alt="" />
                                 <p>10</p>
                             </div>
                             <div className="opinion">
-                                <button>Like</button>
-                                <button>Comment</button>
-                                <button>Share</button>
-
+                                <p><AiFillLike/>Like</p>
+                                <p ><FaRegComment/>Comment</p>
+                                <p ><AiOutlineShareAlt/>Share</p>
                             </div>
 
                         </div>

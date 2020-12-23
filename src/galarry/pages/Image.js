@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { storage, db, timestamp } from '../Config/fire'
 import ReactPlayer from 'react-player'
 import './cssFile/Images.css'
+import like from '../Imagefile/like.png'
+
+import  {FaRegComment} from 'react-icons/fa';
+import  {AiFillLike,AiOutlineShareAlt} from 'react-icons/ai';
 
 const Image = () => {
 
@@ -32,13 +36,14 @@ const Image = () => {
                         </div>
                         <div className="footer">
                             <div className="counter">
-                                <img src="" alt="" />
+                                <img src={like} alt="" />
                                 <p>10</p>
                             </div>
                             <div className="opinion">
-                                <button>Like</button>
-                                <button>Comment</button>
-                                <button>Share</button>
+                                <p><AiFillLike />Like</p>
+                                <p><FaRegComment />Comment</p>
+                                <p><AiOutlineShareAlt />Share</p>
+
 
                             </div>
 
