@@ -23,7 +23,7 @@ const Image = () => {
     return (
         <div className='container '>
             <Helmet>
-                <title>Image || Gallary</title>
+                <title>Gallary || Image</title>
             </Helmet>
 
             {

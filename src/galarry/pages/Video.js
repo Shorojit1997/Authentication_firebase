@@ -7,6 +7,7 @@ import like from '../Imagefile/like.png'
 import  {FaRegComment} from 'react-icons/fa';
 import  {AiFillLike,AiOutlineShareAlt} from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import { Helmet } from 'react-helmet'
 
 import * as BsIcons from 'react-icons/bs';
 
@@ -23,6 +24,9 @@ const Video = () => {
     }, [videos.length])
     return (
         <div className='container'>
+            <Helmet>
+                <title>Gallary || Video</title>
+            </Helmet>
 
             {
                 videos.map((video) =>
