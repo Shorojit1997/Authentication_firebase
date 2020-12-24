@@ -35,18 +35,20 @@ body{
   font-weight: bold;
 }
 .body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
   max-width: 590px;
 }
 .body img{
-  overflow: hidden;
-  max-width: 590px;
+  max-width: 580px;
   margin: 0 auto;
   height: auto;
 }
-.footer {
+.foot {
   position: relative;
   display: block;
 }

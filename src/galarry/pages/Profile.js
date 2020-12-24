@@ -5,17 +5,14 @@ import { storage, db, timestamp } from '../Config/fire'
 import Cover from './Cover'
 
 
-const Profile = () => {
-    const [file, setfile] = useState(null)
-    const[filename,setFilename]=useState('')
-    const [progress, setprogress] = useState(0)
-    const [toggle, settoggle] = useState(false)
-    
+const Profile = (props) => {
+    const { file, setfile, progress, setprogress, modaltoggle, setmodaltoggle, toggle, settoggle } = props;
 
+    console.log(toggle)
 
     return (
         <div className=''>
-            <Cover />
+            <Cover modaltoggle={modaltoggle} setmodaltoggle={setmodaltoggle} />
 
             {/* <div >
                 <label>

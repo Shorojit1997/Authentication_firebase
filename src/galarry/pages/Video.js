@@ -37,7 +37,7 @@ const Video = () => {
                             <ReactPlayer width='585px' key={video.createdAt} controls url={video.url} />
                         </div>
 
-                        <div className="footer">
+                        <div className="foot">
                             <div className="counter">
                                 <img src={like} alt="" />
                                 <p>10</p>

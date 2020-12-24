@@ -6,6 +6,7 @@ import { storage, db, timestamp } from './Config/fire'
 const Startingpage = () => {
     const [file, setfile] = useState(null);
     const [progress, setprogress] = useState(0);
+    const [modaltoggle, setmodaltoggle] = useState(false);
     const [toggle, settoggle] = useState(false);
     const [filename, setFilename] = useState('');
 
@@ -33,6 +34,7 @@ const Startingpage = () => {
                 setfile(null);
                 setFilename('')
                 settoggle(prestate => !prestate);
+                setmodaltoggle(prev=>!prev);
 
                 firestoreref.add({ url, createdAt, filetype })
                 firestoreallref.add({ url, createdAt, filetype });
@@ -43,11 +45,28 @@ const Startingpage = () => {
 
     return (
         <div>
-            <RoutingPage />
-            {toggle? (<UploadForm 
-            file={file} setfile={setfile} progress={progress} setprogress={setprogress} toggle={toggle} settoggle={settoggle} /> ):null}
-            
-
+            <RoutingPage
+                file={file}
+                setfile={setfile}
+                progress={progress}
+                setprogress={setprogress}
+                modaltoggle={modaltoggle}
+                setmodaltoggle={setmodaltoggle}
+                toggle={toggle}
+                settoggle={settoggle} />
+            {modaltoggle ?
+                (<UploadForm
+                    file={file}
+                    setfile={setfile}
+                    progress={progress}
+                    setprogress={setprogress}
+                    modaltoggle={modaltoggle}
+                    setmodaltoggle={setmodaltoggle}
+                    toggle={toggle}
+                    settoggle={settoggle}
+                    filename={filename}
+                    setFilename={setFilename}
+                    UploadHandeler={UploadHandeler} />) : null}
         </div>
     );
 };

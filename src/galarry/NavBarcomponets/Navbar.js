@@ -17,7 +17,7 @@ function Navbar() {
 
 
   return (
-    <div className=''>
+    <div className={{position:'fixed'}}>
     <div  className="navbar">
       <div className="navlogo">Gallary</div>
       <div onClick={tset} className="navicon">

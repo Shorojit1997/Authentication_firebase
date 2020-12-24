@@ -3,9 +3,10 @@ import { storage, db, timestamp } from '../Config/fire'
 import ReactPlayer from 'react-player'
 import './cssFile/Images.css'
 import like from '../Imagefile/like.png'
+import { Helmet } from 'react-helmet'
 
-import  {FaRegComment} from 'react-icons/fa';
-import  {AiFillLike,AiOutlineShareAlt} from 'react-icons/ai';
+import { FaRegComment } from 'react-icons/fa';
+import { AiFillLike, AiOutlineShareAlt } from 'react-icons/ai';
 
 const Image = () => {
 
@@ -21,9 +22,13 @@ const Image = () => {
     }, [images.length])
     return (
         <div className='container '>
+            <Helmet>
+                <title>Image || Gallary</title>
+            </Helmet>
 
             {
                 images.map((image) => (
+                    <div className='mt-3'>
                     <div key={image.createdAt} className='card'>
                         <div className="head">
                             <img src={image.url} alt="" />
@@ -34,7 +39,7 @@ const Image = () => {
                             <img src={image.url} />
 
                         </div>
-                        <div className="footer">
+                        <div className="foot">
                             <div className="counter">
                                 <img src={like} alt="" />
                                 <p>10</p>
@@ -48,6 +53,7 @@ const Image = () => {
                             </div>
 
                         </div>
+                    </div>
                     </div>
 
                 ))
