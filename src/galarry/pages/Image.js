@@ -49,7 +49,6 @@ const Image = () => {
                                 <p><FaRegComment />Comment</p>
                                 <p><AiOutlineShareAlt />Share</p>
 
-
                             </div>
 
                         </div>

@@ -41,23 +41,26 @@ body{
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
-  max-width: 590px;
+  width: 100%;
 }
 .body img{
-  max-width: 580px;
+  width: 100%;
+  object-fit: cover;
   margin: 0 auto;
   height: auto;
 }
 .foot {
+  width: 100%;
   position: relative;
   display: block;
 }
 .counter{
   display:flex;
   flex-wrap: wrap;
+  overflow: hidden;
   padding-left: 10px;
   align-items: center;
-  max-width: 600px;
+  width:100%;
   border-bottom: 1px solid #bbb;
 
 }
@@ -72,6 +75,7 @@ body{
 .opinion{
   display:flex;
   flex-wrap: wrap;
+  width: 100%;
   padding-left: 10px;
   align-items: center;
 
@@ -81,7 +85,6 @@ body{
   width: 33%;
   margin-top: 5px;
   text-align: center;
-
   border-radius: 5px;
 }
 
