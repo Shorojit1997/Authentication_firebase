@@ -26,7 +26,7 @@ const RoutingPage = (props) => {
            if(user)
              setisUser(true);
             else
-            setisUser(false);
+              setisUser(false);
        })
     })
 

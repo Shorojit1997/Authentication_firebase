@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaDivide } from 'react-icons/fa';
 import './Login.css'
 import fire from '../Config/fire'
 import { NavLink, Redirect } from 'react-router-dom';
@@ -10,7 +9,7 @@ const Login = () => {
     const [emailerror, setemailerror] = useState(null);
     const [password, setpassword] = useState(null);
     const [passworderror, setpassworderror] = useState(null);
-    const [isEmailverified, setisEmailverified] = useState(false);
+    // const [isEmailverified, setisEmailverified] = useState(false);
 
     const clear = () => {
         setemailerror('');
@@ -50,7 +49,7 @@ const Login = () => {
 
             <div className="logintab">
                 <div className="appname">
-                    <img src="favicon.ico" alt="image" />
+                    <img src="favicon.ico" alt="" />
                     <h1>Gallary</h1>
                 </div>
                 <div className="loginform">

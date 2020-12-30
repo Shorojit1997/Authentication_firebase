@@ -11,16 +11,17 @@ const Signup = () => {
     const [password, setpassword] = useState('');
     const [repassword, setrepassword] = useState('');
 
-    const clear = () => {
-        setfirstname('');
-        setlastname('');
-        setEmail('');
-        setpassword('');
-        setrepassword('');
-    }
+    // const clear = () => {
+    //     setfirstname('');
+    //     setlastname('');
+    //     setEmail('');
+    //     setpassword('');
+    //     setrepassword('');
+    // }
 
     const signuphandeler = () => {
-        fire.auth().createUserWithEmailAndPassword(email, password)
+        if(password===repassword){
+         fire.auth().createUserWithEmailAndPassword(email, password)
             .then((res) => {
                 setuser(res.user);
                 var user=fire.auth().currentUser;
@@ -33,7 +34,10 @@ const Signup = () => {
             })
             .catch((error) => {
 
-            })
+            })}
+            else{
+                alert('Dont match your password');
+            }
 
     }
     return (

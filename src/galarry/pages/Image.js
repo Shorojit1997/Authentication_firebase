@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { storage, db, timestamp } from '../Config/fire'
-import ReactPlayer from 'react-player'
+import { db} from '../Config/fire'
 import './cssFile/Images.css'
 import like from '../Imagefile/like.png'
 import { Helmet } from 'react-helmet'
@@ -27,15 +26,15 @@ const Image = () => {
 
             {
                 images.map((image) => (
-                    <div className='mt-3'>
-                    <div key={image.createdAt} className='card'>
+                    <div key={image.createdAt} className='mt-3'>
+                    <div className='card'>
                         <div className="head">
                             <img src={image.url} alt="" />
                             <div>Profile name</div>
 
                         </div>
                         <div className="body">
-                            <img src={image.url} />
+                            <img src={image.url} alt=''/>
 
                         </div>
                         <div className="foot">
