@@ -10,6 +10,7 @@ const Startingpage = () => {
     const [toggle, settoggle] = useState(false);
     const [filename, setFilename] = useState('');
 
+
     const UploadHandeler = () => {
         settoggle(prestate => !prestate);
         let filetype = file.name.split('.').pop();
@@ -53,7 +54,8 @@ const Startingpage = () => {
                 modaltoggle={modaltoggle}
                 setmodaltoggle={setmodaltoggle}
                 toggle={toggle}
-                settoggle={settoggle} />
+                settoggle={settoggle} 
+                />
             {modaltoggle ?
                 (<UploadForm
                     file={file}

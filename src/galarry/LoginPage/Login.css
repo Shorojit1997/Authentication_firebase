@@ -1,0 +1,142 @@
+.logindiv{
+    position: absolute;
+    display: flex;
+    margin:0 auto;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+}
+.loginform{
+    position: relative;
+    display: block;
+    margin:0 auto;
+    overflow: hidden;
+    line-height: 0px;
+    padding: 0;
+    min-height: 500px;
+    min-width: 400px;
+    background-color: white;
+    border-radius:15px;
+}
+@media only screen and(max-width:400)
+{
+    .loginform{
+        min-width: 350px;
+        min-height: 450px;
+    }
+}
+
+.logintext{
+    margin:0 auto;
+    padding: 0;
+    top:0;
+    line-height: 40px;
+    border:1px solid #A8256A;
+    background-color: #A8256A;
+    font-family: sans-serif;
+    text-align: center;
+    
+}
+.logininput{
+    position: relative;
+    display: block;
+    margin:0 auto;
+    overflow: hidden;
+    text-align:center;
+    padding: 20px;
+    width: 90%;
+}
+.logininput input{
+    overflow: hidden;
+    width: 90%;
+    border:1px solid green;
+    border-radius: 10px;
+    background-color: #eee;
+    height: 35px;
+
+}
+.logininput p{
+    width: 100%;
+    margin-top: 25px;
+    display: block;
+
+}
+.vaild{
+    font-size: 12px;
+    line-height: 15px;
+    padding-bottom: 20px;
+    display: block;
+    color: red;
+}
+.logininput button{
+    display: block;
+    width: 80%;
+    height: 35px;
+    border:1px solid green;
+    border-radius: 10px;
+    background-color:  #A8256A;
+    overflow: hidden;
+    font-weight: bold;
+    margin:0 auto;
+}
+.logininput button:hover{
+    background-color: #97003C;
+}
+.logininput input:hover{
+    background-color: #ccc;
+}
+.loginfooter{
+
+    display: flex;
+    margin-top: 10px;
+    /* line-height: 50px; */
+    justify-content: center;
+    align-items: center;
+}
+.loginfooter p button{
+    border: 1px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 25px;
+    color: green;
+    font-weight: bold;
+    background-color: transparent;
+}
+.loginfooter p button:hover{
+    background-color: rgb(177, 177, 177);
+}
+.loginforgot{
+    display: flex;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+    line-height: 40px;
+}
+.loginforgot button{
+    background-color: transparent;
+    border:1px solid white;
+    color: blue;
+}
+.loginforgot button:hover{
+    font-weight: bold;
+}
+.appname{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.appname img{
+    width: 50px;
+    height: 50px;
+}
+.appname h1{
+    font-family: 'Brush Script MT', cursive;
+}
+.logintab{
+    margin:0 auto;
+    padding: 0;
+}

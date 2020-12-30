@@ -17,7 +17,6 @@ const Image = () => {
         firestoreref.get().then((docfile) => {
             const items = docfile.docs.map((item) => item.data());
             setimages(items);
-            console.log(images);
         })
     }, [images.length])
     return (

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import fire from '../fire'
-import './stylefile.css'
+import firebase from './firebase'
+// import './stylefile.css'
 
 import LoginPage from './LoginPage';
 
 
 const HomePage = () => {
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState(null);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -14,31 +14,45 @@ const HomePage = () => {
 
 
     const signIn = () => {
-        fire
+        firebase
             .auth().signInWithEmailAndPassword(email, password)
             .then(res => {
-                console.log(res);
+                console.log(res.email);
+              
             })
             .catch(err => {
                 setError(err.message);
             })
     }
     const signUp = () => {
-        fire
+        firebase
             .auth().createUserWithEmailAndPassword(email, password)
             .then(res => {
-                console.log(res);
+                var user = firebase.auth().currentUser;
+               // user.sendSignInLinkToEmail(res.email);
+                user.sendEmailVerification();
+                user.updateProfile({
+                    displayName: "Jane Q. User",
+                    photoURL: "https://example.com/jane-q-user/profile.jpg"
+                  })
             })
             .catch(err => {
                 setError(err.message);
             })
     }
     useEffect(() => {
-        fire.auth().onAuthStateChanged((user) => {
+        firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 setUser(user);
+
+                console.log(user.email)
+                console.log(user.displayName);
+                console.log(user.photoURL)
+                console.log(user.emailVerified);
+                console.log(user.uid);
+               
             } else {
-                setUser('');
+                setUser(null);
             }
         })
     }, [])
