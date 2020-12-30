@@ -21,8 +21,8 @@ const RoutingPage = (props) => {
 
     useEffect(() => {
        fire.auth().onAuthStateChanged((user)=>{
-           if(user.emailVerified)
-              setemailverity(true);
+        //    if(user.emailVerified)
+        //       setemailverity(true);
            if(user)
              setisUser(true);
             else

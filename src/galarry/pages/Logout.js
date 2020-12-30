@@ -8,7 +8,7 @@ const Logout = ({isuser,setisUser,...rest}) => {
 
     useEffect(() => {
        fire.auth().signOut();
-       setisUser(false);
+    //    setisUser(false);
     })
     return(
         <Redirect to='/login'/>
