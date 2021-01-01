@@ -15,45 +15,38 @@ import Verified_email from './LoginPage/Verified_email';
 
 
 const RoutingPage = (props) => {
-    const{modaltoggle,setmodaltoggle}=props;
-    const [isuser, setisUser] = useState(false);
-    const[emailverify,setemailverity]=useState(false);
+    const [isuser, setisUser] = useState(null);
+    const [emailverify, setemailverity] = useState(false);
 
     useEffect(() => {
-       fire.auth().onAuthStateChanged((user)=>{
-        //    if(user.emailVerified)
-        //       setemailverity(true);
-           if(user)
-             setisUser(true);
+        fire.auth().onAuthStateChanged((user) => {
+            if (user) {
+                setisUser(user);
+                setemailverity(user.emailVerified);
+            }
             else
-              setisUser(false);
-       })
-    })
+                setisUser(null);
+        })
+    }, [isuser, setisUser, emailverify, setemailverity])
 
     return (
-        <div >{
-
+        <div >
             <BrowserRouter>
                 {
-                    isuser ? <Navbar /> : null
-                }
+                    isuser && emailverify && <Navbar />}
                 <Switch>
-                    <ProtectedRoute exact path='/' component={Home} {...{emailverify,isuser,setisUser,...props}}/>
-                    <ProtectedRoute exact path='/image' component={Image} {...{emailverify,isuser,setisUser,...props}}/>
-                    <ProtectedRoute exact path='/video' component={Video} {...{emailverify,isuser,setisUser,...props}}/>
-                    <ProtectedRoute exact path='/profile'  component={Profile}  {...{emailverify,isuser,setisUser,...props}}  />
-                    <ProtectedRoute exact path='/logout' component={Logout} {...{emailverify,isuser,setisUser,...props}} />
-                    <Route exact path='/login' component={Login} {...{emailverify,isuser,setisUser,...props}}/>
-                    <Route exact path='/sign_up' component={Signup} {...{emailverify,isuser,setisUser,...props}}/>
-                    <Route exact path='/verified_email' component={Verified_email} {...{emailverify,isuser,setisUser,...props}}/>
+                    <ProtectedRoute exact path='/' component={Home} {...{ emailverify, isuser, setisUser, ...props }} />
+                    <ProtectedRoute exact path='/image' component={Image} {...{ emailverify, isuser, setisUser, ...props }} />
+                    <ProtectedRoute exact path='/video' component={Video} {...{ emailverify, isuser, setisUser, ...props }} />
+                    <ProtectedRoute exact path='/profile' component={Profile}  {...{ emailverify, isuser, setisUser, ...props }} />
+                    <ProtectedRoute exact path='/logout' component={Logout} {...{ emailverify, isuser, setisUser, ...props }} />
+                    <Route exact path='/login' component={Login} {...{ emailverify, isuser, setisUser, ...props }} />
+                    <Route exact path='/sign_up' component={Signup} {...{ emailverify, isuser, setisUser, ...props }} />
+                    <Route exact path='/verified_email' component={Verified_email} {...{ emailverify, isuser, setisUser, ...props }} />
                 </Switch>
+
             </BrowserRouter>
-
-
-
-        }
-
-        </div>
+        </div >
     );
 };
 

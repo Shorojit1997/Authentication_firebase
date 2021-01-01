@@ -13,7 +13,7 @@ import LoginSignup from './galarry/LoginPage/LoginSignup';
 
 function App() {
   return (
-    <div >
+    <div className='app'>
       <Startingpage/>
      {/* <Facebook/> */}
       {/* <FaceBookLogin/> */}

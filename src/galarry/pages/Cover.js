@@ -3,7 +3,6 @@ import './cssFile/Cover.css'
 import M from '../Imagefile/sakifa.jpg'
 import nesarul from '../Imagefile/nesarul.jpg'
 import {FaCamera} from 'react-icons/fa'
-import UploadForm from '../Form/UploadForm';
 
 const Cover = (props) => {
     const{modaltoggle,setmodaltoggle}=props;

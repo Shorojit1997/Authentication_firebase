@@ -48,7 +48,7 @@
     margin:0 auto;
     overflow: hidden;
     text-align:center;
-    width: 90%;
+    width: 70%;
 }
 .logininput input{
     overflow: hidden;
@@ -75,7 +75,7 @@
 }
 .logininput button{
     display: block;
-    width: 80%;
+    width: 50%;
     height: 35px;
     border:1px solid green;
     border-radius: 10px;

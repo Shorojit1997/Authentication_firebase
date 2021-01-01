@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player'
-import { storage, db, timestamp } from '../Config/fire'
+import { db } from '../Config/fire'
 import './cssFile/Videos.css'
 import like from '../Imagefile/like.png'
 //icon
 import  {FaRegComment} from 'react-icons/fa';
 import  {AiFillLike,AiOutlineShareAlt} from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
 import { Helmet } from 'react-helmet'
-
-import * as BsIcons from 'react-icons/bs';
 
 const Video = () => {
     const [videos, setvideos] = useState([])

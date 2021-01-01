@@ -1,7 +1,5 @@
 import React from 'react';
-import { useState } from 'react'
 import './cssFile/Profile.css'
-import { storage, db, timestamp } from '../Config/fire'
 import Cover from './Cover'
 import { Helmet } from 'react-helmet'
 

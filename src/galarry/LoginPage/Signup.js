@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink, Redirect } from 'react-router-dom'
 import fire from '../Config/fire'
 import './Signup.css'
 
 const Signup = () => {
     const [user, setuser] = useState(null);
-    const [firstname, setfirstname] = useState(null);
-    const [lastname, setlastname] = useState(null);
-    const [email, setEmail] = useState(null);
+    const [firstname, setfirstname] = useState('');
+    const [lastname, setlastname] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setpassword] = useState('');
     const [repassword, setrepassword] = useState('');
 
@@ -20,24 +20,30 @@ const Signup = () => {
     // }
 
     const signuphandeler = () => {
-        if(password===repassword){
-         fire.auth().createUserWithEmailAndPassword(email, password)
-            .then((res) => {
-                setuser(res.user);
-                var user=fire.auth().currentUser;
-                user.sendEmailVerification();
-                user.updateProfile({
-                    displayName: firstname+' '+lastname,
+        if (password === repassword && firstname && lastname) {
+            fire.auth().createUserWithEmailAndPassword(email, password)
+                .then((res) => {
+                    setuser(res.user);
+                    var user = fire.auth().currentUser;
+                    user.sendEmailVerification();
+                    user.updateProfile({
+                        displayName: firstname + ' ' + lastname,
+
+                    })
 
                 })
+                .catch((error) => {
 
-            })
-            .catch((error) => {
-
-            })}
-            else{
+                })
+        }
+        else {
+            if (!firstname)
+                alert('Fill the first name');
+            else if (!lastname)
+                alert('Fill the last name');
+            else if (password !== repassword)
                 alert('Dont match your password');
-            }
+        }
 
     }
     return (
@@ -48,7 +54,7 @@ const Signup = () => {
 
             <div className="logintab">
                 <div className="appname">
-                    <img src="favicon.ico" alt="image" />
+                    <img src="favicon.ico" alt="" />
                     <h1>Gallary</h1>
                 </div>
                 <div className="loginform">
@@ -57,6 +63,7 @@ const Signup = () => {
                     </div>
                     {/* <div className="nothings"></div> */}
                     <div className="logininput">
+
                         <p>First name</p>
                         <input type="text" name='firstname' onChange={(e) => { setfirstname(e.target.value) }} value={firstname} required placeholder="Enter your firstname..." />
                         <p>Last name</p>

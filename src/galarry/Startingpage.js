@@ -10,13 +10,13 @@ const Startingpage = () => {
     const [toggle, settoggle] = useState(false);
     const [filename, setFilename] = useState('');
 
-
+    const types = ['jpg','png', 'jpeg','JPEG','JPG','PNG'];
     const UploadHandeler = () => {
         settoggle(prestate => !prestate);
         let filetype = file.name.split('.').pop();
 
         let bucketname = '';
-        if (filetype === 'JPG' || filetype === 'jpg' || filetype === 'PNG') bucketname = 'image'
+        if (types.includes(filetype)) bucketname = 'image'
         else
             bucketname = 'video';
 
